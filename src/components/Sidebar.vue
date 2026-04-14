@@ -1,19 +1,27 @@
+<script setup lang="ts">
+import { Home, Library, X } from 'lucide-vue-next';
+defineProps(['isDarkMode']);
+const emit = defineEmits(['close']);
+</script>
+
 <template>
-  <aside class="w-64 bg-black h-screen p-6 flex flex-col gap-8 border-r border-slate-800 shrink-0">
-    <div class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center font-bold text-white uppercase">S</div>
-      <h1 class="text-purple-500 text-2xl font-black italic tracking-tighter">SoundSoul.</h1>
+  <aside 
+    class="w-64 h-full p-6 flex flex-col gap-6"
+    :class="isDarkMode ? 'bg-zinc-900 border-r border-zinc-800' : 'bg-white border-r border-gray-200'"
+  >
+    <div class="flex justify-between items-center">
+      <span class="font-bold uppercase tracking-widest text-sm opacity-60">Menu</span>
+      <button @click="emit('close')" class="p-1 hover:bg-gray-200 dark:hover:bg-zinc-800 rounded">
+        <X :size="20" />
+      </button>
     </div>
-    
-    <nav class="flex flex-col gap-6">
-      <div class="text-white cursor-pointer font-bold flex items-center gap-2">
-        <span>🏠</span> Home
+
+    <nav class="flex flex-col gap-4">
+      <div class="flex items-center gap-3 font-semibold cursor-pointer">
+        <Home :size="20" /> Home
       </div>
-      <div class="text-slate-400 hover:text-white cursor-pointer flex items-center gap-2">
-        <span>🔍</span> Search
-      </div>
-      <div class="text-slate-400 hover:text-white cursor-pointer flex items-center gap-2">
-        <span>📚</span> Library
+      <div class="flex items-center gap-3 font-semibold cursor-pointer">
+        <Library :size="20" /> Your Library
       </div>
     </nav>
   </aside>
