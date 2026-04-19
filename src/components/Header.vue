@@ -5,7 +5,7 @@ const emit = defineEmits(['toggleSidebar', 'toggleDarkMode', 'search']);
 </script>
 
 <template>
-  <header class="h-16 flex items-center justify-between px-6 border-b shrink-0 z-50 sticky top-0" :class="isDarkMode ? 'border-zinc-800 bg-zinc-950/80 backdrop-blur-md' : 'border-gray-100 bg-white'">
+  <header class="h-16 flex items-center justify-between px-6 border-b shrink-0 z-50 sticky top-0 backdrop-blur-md" :class="isDarkMode ? 'border-zinc-800 bg-zinc-950/80' : 'border-gray-100 bg-white/90'">
     <div class="flex items-center gap-4">
       <button @click="emit('toggleSidebar')" class="p-2 hover:bg-zinc-500/10 rounded-lg">
         <Menu :size="22" />

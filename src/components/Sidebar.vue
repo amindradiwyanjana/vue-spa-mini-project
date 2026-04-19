@@ -4,16 +4,28 @@ defineProps<{ isDarkMode: boolean }>();
 </script>
 
 <template>
-  <div class="w-[220px] p-4 flex flex-col h-full overflow-hidden">
+  <div class="w-56 p-4 flex flex-col h-full overflow-hidden">
+    <p class="text-xs font-bold uppercase tracking-widest opacity-40 mb-3 px-2">Menu</p>
     <nav class="space-y-1">
-      <div class="flex items-center gap-3 p-2.5 rounded-lg bg-purple-500/10 text-purple-500 text-sm font-semibold cursor-pointer">
-        <Home :size="18" /> Home
+      <div
+        class="flex items-center gap-3 p-3 rounded-xl bg-purple-500/10 text-purple-500 text-sm font-semibold cursor-pointer"
+      >
+        <Home :size="18" />
+        <span>Home</span>
       </div>
-      <div class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-zinc-500/10 text-sm font-medium transition cursor-pointer">
-        <Library :size="18" /> Your Library
+      <div
+        class="flex items-center gap-3 p-3 rounded-xl hover:bg-zinc-500/10 text-sm font-medium transition cursor-pointer"
+        :class="isDarkMode ? 'text-zinc-300' : 'text-zinc-700'"
+      >
+        <Library :size="18" />
+        <span>Your Library</span>
       </div>
-      <div class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-zinc-500/10 text-sm font-medium transition cursor-pointer">
-        <Music2 :size="18" /> Top Charts
+      <div
+        class="flex items-center gap-3 p-3 rounded-xl hover:bg-zinc-500/10 text-sm font-medium transition cursor-pointer"
+        :class="isDarkMode ? 'text-zinc-300' : 'text-zinc-700'"
+      >
+        <Music2 :size="18" />
+        <span>Top Charts</span>
       </div>
     </nav>
   </div>
