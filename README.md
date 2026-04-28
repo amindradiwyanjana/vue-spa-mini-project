@@ -4,6 +4,9 @@ SoundSoul is a music discovery app where you can browse tracks, search for your 
 
 Built as a mini project for CS3404: GUI Programming using Vue 3, TypeScript, and Tailwind CSS.
 
+**Author:** EDIRISURIYA E.M.A.D
+**Reg No:** EG/2023/5584
+
 ---
 
 ## Getting Started
